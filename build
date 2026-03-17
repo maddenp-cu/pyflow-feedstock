@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+set -eux
+conda build --channel conda-forge --error-overlinking --override-channels .
