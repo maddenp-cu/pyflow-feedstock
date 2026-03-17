@@ -2,16 +2,17 @@ package:
   name: pyflow
   version: 3.5.1
 source:
-  git_depth: 1
-  git_rev: 3.5.1
-  git_url: https://github.com/ecmwf/pyflow.git
+  sha256: 4974afb7854cc326e57005fd14e115a41f4e01ff2abe88e52ad00204bc5ee583
+  url: https://github.com/ecmwf/pyflow/archive/refs/tags/3.5.1.tar.gz
 build:
   include_recipe: false
   number: 0
   script: $PYTHON -m pip install . --ignore-installed --no-cache-dir --no-deps -vvv
 requirements:
-  host:
+  build:
+    - pip
     - python
+    - setuptools
   run:
     - ecflow
     - jinja2
